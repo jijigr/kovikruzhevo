@@ -1,10 +1,10 @@
 const dresses=[
- {id:'dress-1',name:'Платье 01',price:12000,color:'Айвори',sizes:['XS','S','M'],image:'assets/dress-01.png',desc:'Атласное платье с высоким разрезом и струящимся шлейфом.'},
- {id:'dress-2',name:'Платье 02',price:8000,color:'Айвори',sizes:['XS','S'],image:'assets/dress-02.png',desc:'Короткое платье с объёмной юбкой и кружевными деталями.'},
- {id:'dress-3',name:'Платье 03',price:16000,color:'Айвори',sizes:['S','M','L'],image:'assets/dress-03.png',desc:'Кружевное платье-русалка с длинным шлейфом.'},
- {id:'dress-4',name:'Платье 04',price:18000,color:'Айвори',sizes:['S','M'],image:'assets/dress-04.png',desc:'Сияющее платье-футляр с длинной фатой.'},
- {id:'dress-5',name:'Платье 05',price:14000,color:'Айвори',sizes:['S','M','L','XL'],image:'assets/dress-05.png',desc:'Пышное платье с корсетом и выразительными рукавами.'},
- {id:'dress-6',name:'Платье 06',price:17000,color:'Айвори',sizes:['XS','S','M'],image:'assets/dress-06.png',desc:'Сверкающее платье-русалка на тонких бретелях.'}];
+ {id:'dress-1',name:'Платье 01',price:12000,color:'Айвори',sizes:['XS','S','M'],image:'assets/dress-01.png?v=3',desc:'Атласное платье с высоким разрезом и струящимся шлейфом.'},
+ {id:'dress-2',name:'Платье 02',price:8000,color:'Айвори',sizes:['XS','S'],image:'assets/dress-02.png?v=3',desc:'Короткое платье с объёмной юбкой и кружевными деталями.'},
+ {id:'dress-3',name:'Платье 03',price:16000,color:'Айвори',sizes:['S','M','L'],image:'assets/dress-03.png?v=3',desc:'Кружевное платье-русалка с длинным шлейфом.'},
+ {id:'dress-4',name:'Платье 04',price:18000,color:'Айвори',sizes:['S','M'],image:'assets/dress-04.png?v=3',desc:'Сияющее платье-футляр с длинной фатой.'},
+ {id:'dress-5',name:'Платье 05',price:14000,color:'Айвори',sizes:['S','M','L','XL'],image:'assets/dress-05.png?v=3',desc:'Пышное платье с корсетом и выразительными рукавами.'},
+ {id:'dress-6',name:'Платье 06',price:17000,color:'Айвори',sizes:['XS','S','M'],image:'assets/dress-06.png?v=3',desc:'Сверкающее платье-русалка на тонких бретелях.'}];
 let state={cart:JSON.parse(localStorage.getItem('kovik-cart')||'[]')};
 const money=n=>new Intl.NumberFormat('ru-RU').format(n)+' ₽',byId=id=>dresses.find(x=>x.id===id),$=s=>document.querySelector(s);
 function bounds(){let min=+$('#minPrice').value,max=+$('#maxPrice').value;if(min>max){[min,max]=[max,min];if(document.activeElement===$('#minPrice'))$('#maxPrice').value=max;else $('#minPrice').value=min}$('#minPriceLabel').value=money(min);$('#maxPriceLabel').value=money(max);return[min,max]}
